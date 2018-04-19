@@ -18,13 +18,11 @@ def index():
       user_agent = {'User-agent': agent}
       rt = requests.get(qs.decode('utf8'), headers = user_agent).text
     except:
-      rt = "nope"
+      return "DOWN"
 
     response = flask.Response(rt)
     response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
-  else:
-    print("nope")
+    return "UP"
 
   return render_template('index.html')
 
