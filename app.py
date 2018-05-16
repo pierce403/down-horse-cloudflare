@@ -15,8 +15,7 @@ def index():
 
   if url:
     try:
-      #if not url.lower().startswith('http'):
-      if not url.contains(':'):
+      if ':' not in url:
         print("whoops let me fix that")
         url='http://'+url
       agent = request.headers.get('User-Agent')
