@@ -10,19 +10,24 @@ import requests
 
 @app.route('/')
 def index():
-  qs=request.query_string
+  url=request.args.get('u')
+  print("looks like "+str(url))
 
-  if qs:
+  if url:
     try:
+      #if not url.lower().startswith('http'):
+      if not url.contains(':'):
+        print("whoops let me fix that")
+        url='http://'+url
       agent = request.headers.get('User-Agent')
       user_agent = {'User-agent': agent}
-      rt = requests.get(qs.decode('utf8'), headers = user_agent).text
+      rt = requests.get(str(url), headers = user_agent).text
     except:
-      return "DOWN"
+      return url+" is DOWN"
 
     response = flask.Response(rt)
     response.headers['Access-Control-Allow-Origin'] = '*'
-    return "UP"
+    return url+" is UP "+response.status
 
   return render_template('index.html')
 
