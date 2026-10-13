@@ -1,8 +1,15 @@
 {
-  "name": "down-horse-cloudflare", "private": true, "type": "module",
+  "name": "down-horse-cloudflare",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "build": "node scripts/build.mjs", "test": "npm run build && node --test tests/*.test.mjs",
-    "check:deploy": "npm run build && wrangler deploy --dry-run", "deploy": "npm run build && wrangler deploy"
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check:deploy": "npm run build && wrangler deploy --dry-run --env \"\"",
+    "deploy": "npm run build && wrangler deploy --env \"\""
   },
-  "devDependencies": {"wrangler": "4.149.0", "miniflare": "5.20261006.1-alpha"}
+  "devDependencies": {
+    "wrangler": "4.149.0",
+    "miniflare": "5.20261006.1-alpha"
+  }
 }

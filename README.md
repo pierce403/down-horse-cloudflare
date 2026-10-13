@@ -1,5 +1,6 @@
-# cors.io
-a simple cors proxy
+# Downhorse
+
+A public website status checker, migrated from the retained Heroku application.
 # Cloudflare migration
 
 The exact Heroku Git source is retained at
