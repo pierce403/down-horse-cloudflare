@@ -20,5 +20,6 @@ address URLs. Results are plain text. Unknown paths return real 404s.
 `/deployment.json` identifies the source commit independently of deployment API
 evidence. No custom domain is currently configured for this app.
 
-Heroku remains the recovery source until the hosted Worker and native build are
-verified. Retain its slug/history; permanent deletion is outside migration scope.
+Production is https://down-horse.bcrt43.workers.dev, built natively from public
+main. Hosted Worker checks pass and the original Heroku dyno is stopped. Retain
+its slug/history and configuration; permanent deletion is outside migration scope.
